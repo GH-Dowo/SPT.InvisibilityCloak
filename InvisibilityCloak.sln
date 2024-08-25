@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{DC65C794-E751-430F-A065-61165120F29D}") = "InvisibilityCloak", "InvisibilityCloak.csproj", "{6B35B0A4-9CFE-4A44-A870-7D16EA5FF51C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B35B0A4-9CFE-4A44-A870-7D16EA5FF51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B35B0A4-9CFE-4A44-A870-7D16EA5FF51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B35B0A4-9CFE-4A44-A870-7D16EA5FF51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B35B0A4-9CFE-4A44-A870-7D16EA5FF51C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6B0F403-F411-4574-B4A5-4171CBAD8C18}
+	EndGlobalSection
+EndGlobal
