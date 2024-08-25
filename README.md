@@ -15,5 +15,5 @@ Compile instructions:
 Invisibility is on by default.
 
 To switch invisibility on and off, press the Tilde (`) key in the game, and:
-Turn off invisibility using the command 'invisible_off'
-Turn on invisibility using the command 'invisible_on'
+- Turn off invisibility using the command 'invisible_off'
+- Turn on invisibility using the command 'invisible_on'
