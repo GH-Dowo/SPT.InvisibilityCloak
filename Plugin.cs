@@ -13,6 +13,7 @@ using System.Reflection;
 using EFT.UI;
 using EFT.Communications;
 using SPT.Reflection.Utils;
+using System.Security.Policy;
 
 
 namespace InvisibilityCloak
@@ -20,7 +21,7 @@ namespace InvisibilityCloak
     [BepInPlugin("com.Invisibility.Cloak", "InvisibilityCloak", "1.0.0")]
     class Plugin : BaseUnityPlugin
     {
-        public static bool InvisibilityCloak_enabled = true;
+        internal static ConfigEntry<bool> InvisibilityCloak_enabled;
 
         private void Awake()
         {
@@ -28,18 +29,25 @@ namespace InvisibilityCloak
 
             ConsoleScreen.Processor.RegisterCommand("invisible_on", new Action(invisible_on));
             ConsoleScreen.Processor.RegisterCommand("invisible_off", new Action(invisible_off));
+
+            InvisibilityCloak_enabled = Config.Bind(
+                "",
+                "Invisibility",
+                true,
+                "Tick to enable invisibility");
+
             new BotMemoryClass_AddEnemy_Patch().Enable();
         }
 
         private void invisible_on()
         {
-            InvisibilityCloak_enabled = true;
+            InvisibilityCloak_enabled.Value = true;
             Notifier.DisplayWarningNotification($"InvisibilityCloak is ON", ENotificationDurationType.Long);
         }
 
         private void invisible_off()
         {
-            InvisibilityCloak_enabled = false;
+            InvisibilityCloak_enabled.Value = false;
             Notifier.DisplayWarningNotification($"InvisibilityCloak is OFF", ENotificationDurationType.Long);
         }
     }
@@ -78,7 +86,7 @@ namespace InvisibilityCloak
         [PatchPrefix]
         private static bool PatchPrefix(BotMemoryClass __instance, BotOwner ___botOwner_0, BotsGroup ___botsGroup_0, Action<IPlayer> ___action_0, IPlayer enemy, BotSettingsClass groupInfo, bool onActivation)
         {
-            if (!Plugin.InvisibilityCloak_enabled)
+            if (!Plugin.InvisibilityCloak_enabled.Value)
             {
                 return true; // Skip our function and execute original function instead of ours
             }
